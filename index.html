@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/js/bootstrap.bundle.js">
+    <title>getDocumentAssigned</title>
+</head>
+<body>
+    <main class="w-75 rounded shadow m-auto p-5">
+        <h1>Insert Month</h1>
+        <input type="text" class="form-control" id="demo" placeholder="Type Month Here">
+        <button class="btn btn-danger mt-5" onclick="checkDays()">Days</button>
+        <div id="mode" class="mt-3"></div>
+    </main>
+</body>
+</html>
+
+
+<script>
+    function checkDays() {
+        let month = document.getElementById('demo').value.trim()
+        const thirtyOne = ['january', 'march', 'may', 'july', 'august', 'october', 'december'];
+        const thirty = ['April', 'June', 'September', 'November'];
+        const twentyEight = ['february'];
+        let reply = document.getElementById('mode')
+
+        if (thirtyOne.includes(month)) {
+            reply.innerHTML = `<h1 class="text-danger">${month} has 31 days</h1>`;
+            console.log(`${month} has 31 days`)
+
+        } else if (thirty.inlcludes(month)) {
+            reply.innerHTML = `<h1 class="text-danger">${month} has 30 days</h1>`;
+            console.log(`${month} has 30 days`)
+
+        } else if (twentyEight.includes(month)) {
+            reply.innerHTML = `<h1 class="text-danger">${month} has 28 days</h1>`;
+            console.log(`${month} has 28 days`)
+            
+        } else {
+            reply.innerHTML = `<h1 class="text-success"> this is an invalid month </h1>`;
+            console.log(`this is an invalid month`);
+        }
+    }
+</script>
